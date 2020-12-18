@@ -66,7 +66,7 @@ function ougc_profileactivity_info()
 		'author'		=> 'Omar Gonzalez',
 		'authorsite'	=> 'http://community.mybb.com/user-25096.html',
 		'version'		=> '1.0',
-		'compatibility'	=> '16*',
+		'compatibility'	=> '18*',
 		'guid'			=> ''
 	);
 }
@@ -424,7 +424,7 @@ function ougc_profileactivity_get_preview($message, $maxlen=100, $stripquotes=tr
 	if($stripquotes)
 	{
 		$message = preg_replace(array(
-			'#\[quote=([\"\']|&quot;|)(.*?)(?:\\1)(.*?)(?:[\"\']|&quot;)?\](.*?)\[/quote\](\r\n?|\n?)#esi',
+			"#\[quote=([\"']|&quot;|)(.*?)(?:\\1)(.*?)(?:[\"']|&quot;)?\](.*?)\[/quote\](\r\n?|\n?)#si",
 			'#\[quote\](.*?)\[\/quote\](\r\n?|\n?)#si',
 			'#\[quote\]#si',
 			'#\[\/quote\]#si'
