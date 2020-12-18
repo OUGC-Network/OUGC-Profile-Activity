@@ -95,7 +95,7 @@ function ougc_profileactivity_activate()
 		'forums'	=> array(
 			'title'			=> $lang->ougc_profileactivity_forums,
 			'description'	=> $lang->ougc_profileactivity_forums_d,
-			'optionscode'	=> 'text',
+			'optionscode'	=> 'forumselect',
 			'value'			=> '',
 		),
 		'maxlengh'	=> array(
@@ -223,7 +223,7 @@ function ougc_profileactivity()
 	$posts_limit = (int)$mybb->settings['ougc_profileactivity_maxposts'];
 
 	// Return if no activated.
-	if($thread_limit < 1 && $posts_limit < 1 || !$ttc && !$ptc)
+	if($thread_limit < 1 && $posts_limit < 1 || !$ttc && !$ptc || (int)$mybb->settings['ougc_profileactivity_forums'] === -1)
 	{
 		return;
 	}
