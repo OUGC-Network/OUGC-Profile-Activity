@@ -3,12 +3,12 @@
 /***************************************************************************
  *
  *   OUGC Profile Activity plugin (/inc/languages/english/admin/ougc_profileactivity.lang.php)
- *     Author: Omar Gonzalez
+ *   Author: Omar Gonzalez
  *   Copyright: © 2012 Omar Gonzalez
  *
- *   Website: http://community.mybb.com/user-25096.html
+ *   Website: https://ougc.network/
  *
- *   Show an overview of latest threads and/or posts in profile.
+ *   Show an overview of latest user threads or posts in profiles.
  *
  ***************************************************************************
  ****************************************************************************
@@ -26,24 +26,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ****************************************************************************/
 
-$l['ougc_profileactivity'] = 'OUGC Profile Activity';
-$l['ougc_profileactivity_d'] = 'Show an overview of latest threads and/or posts in profile.';
+$l = [
+    'ougcProfileActivity' => 'OUGC Profile Activity',
+    'ougcProfileActivityDescription' => 'Show an overview of latest user threads or posts in profiles',
 
+    'setting_group_ougc_profileactivity' => 'Profile Activity',
+    'setting_group_ougc_profileactivity_desc' => 'Manage what content overview to display in user profiles.',
+    'setting_ougc_profileactivity_maxThreads' => 'Maximum Threads To Display',
+    'setting_ougc_profileactivity_maxThreads_desc' => 'Select how many latest threads to display in profiles. Select <code>0</code> to disable.',
+    'setting_ougc_profileactivity_maxPosts' => 'Maximum Posts To Display',
+    'setting_ougc_profileactivity_maxPosts_desc' => 'Select how many latest posts to display in profiles. Select <code>0</code> to disable.',
+    'setting_ougc_profileactivity_ignoredThreadsForums' => 'Ignored Thread Forums',
+    'setting_ougc_profileactivity_ignoredThreadsForums_desc' => 'Select what forums to ignore when building the latest threads activity content.',
+    'setting_ougc_profileactivity_ignoredPostsForums' => 'Ignored Post Forums',
+    'setting_ougc_profileactivity_ignoredPostsForums_desc' => 'Select what forums to ignore when building the latest posts activity content.',
+    'setting_ougc_profileactivity_maxTextLength' => 'Maximum Subject Character Length',
+    'setting_ougc_profileactivity_maxTextLength_desc' => 'You can strip the thread or post subject to fit specific widths.',
 
-// PluginLibrary
-$l['ougc_profileactivity_plreq'] = 'This plugin requires <a href="{1}">PluginLibrary</a> version {2} or later to be uploaded to your forum.';
-$l['ougc_profileactivity_plold'] = 'This plugin requires PluginLibrary version {1} or later, whereas your current version is {2}. Please do update <a href="{3}">PluginLibrary</a>.';
-
-// Settings
-$l['ougc_profileactivity_maxthreads'] = 'Threads Limit';
-$l['ougc_profileactivity_maxthreads_d'] = 'Limit of latests threads to show in profile. 0 = disable.';
-$l['ougc_profileactivity_maxposts'] = 'Posts Limit';
-$l['ougc_profileactivity_maxposts_d'] = 'Limit of latests posts to show in profile. 0 = disable.';
-$l['ougc_profileactivity_forums'] = 'Ignored Forums';
-$l['ougc_profileactivity_forums_d'] = 'Enter a comma separate list of forums to ignore from the latests threads/posts.';
-$l['ougc_profileactivity_maxlengh'] = 'Maximum Title Lengh';
-$l['ougc_profileactivity_maxlengh_d'] = 'Enter the maximum number of characters for threads/posts titles.';
-$l['ougc_profileactivity_posticon'] = 'Post Icon';
-$l['ougc_profileactivity_posticon_d'] = 'Default post icon to use.';
-$l['ougc_profileactivity_prefixes'] = 'Show Prefixes';
-$l['ougc_profileactivity_prefixes_d'] = 'Whether to show thread prefixes.';
+    'ougcProfileActivityPluginLibraryWarning' => 'This plugin requires <a href="{1}">PluginLibrary</a> version {2} or later to be uploaded to your forum.',
+];

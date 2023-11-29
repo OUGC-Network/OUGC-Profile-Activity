@@ -1,0 +1,13 @@
+<tr>
+    <td class="{$rowBackground}">
+        {$postIcon} {$displayPrefix} <strong><a
+            href="{$mybb->settings['bburl']}/{$threadUrl}"
+            title="{$fullSubject}">{$rowData['subject']}</a></strong><br/>
+        <span class="smalltext">{$lang->ougcProfileActivityProfileForum}: <a
+                href="{$mybb->settings['bburl']}/{$forumUrl}"
+                title="{$forumName}">{$forumName}</a>, {$dateLine}</span><br
+            class="clear"/>
+        <span class="float_right smalltext">{$lang->ougcProfileActivityProfileReplies}: {$rowData['replies']}, {$lang->ougcProfileActivityProfileViews}: {$rowData['views']}</span>
+        <span class="smalltext">{$postPreview}</span>
+    </td>
+</tr>

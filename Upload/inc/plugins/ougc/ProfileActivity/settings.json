@@ -1,0 +1,22 @@
+{
+  "maxThreads": {
+    "optionscode": "numeric",
+    "value": 10
+  },
+  "maxPosts": {
+    "optionscode": "numeric",
+    "value": 10
+  },
+  "ignoredThreadsForums": {
+    "optionscode": "forumselect",
+    "value": ""
+  },
+  "ignoredPostsForums": {
+    "optionscode": "forumselect",
+    "value": ""
+  },
+  "maxTextLength": {
+    "optionscode": "numeric",
+    "value": 100
+  }
+}

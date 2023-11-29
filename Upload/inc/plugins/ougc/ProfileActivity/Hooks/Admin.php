@@ -2,7 +2,7 @@
 
 /***************************************************************************
  *
- *   OUGC Profile Activity plugin (/inc/languages/english/ougc_profileactivity.lang.php)
+ *   OUGC Profile Activity plugin (/inc/plugins/ougc/ProfileActivity/Hooks/Admin.php)
  *   Author: Omar Gonzalez
  *   Copyright: © 2012 Omar Gonzalez
  *
@@ -26,16 +26,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ****************************************************************************/
 
-$l = [
-    'ougcProfileActivity' => 'OUGC Profile Activity',
+declare(strict_types=1);
 
-    'ougcProfileActivityProfileReplies' => 'Replies',
-    'ougcProfileActivityProfileViews' => 'Views',
-    'ougcProfileActivityProfileForum' => 'Forum',
+namespace ougc\ProfileActivity\Hooks\Admin;
 
-    'ougcProfileActivityProfileTableThreadsTitle' => "{1}'s Latest Threads",
-    'ougcProfileActivityProfileTableThreadsEmpty' => '{1} has currently no threads to display.',
+function admin_config_plugins_deactivate(): bool
+{
+    global $mybb, $page;
 
-    'ougcProfileActivityProfileTablePostsTitle' => "{1}'s Latest Posts",
-    'ougcProfileActivityProfileTablePostsEmpty' => '{1} has currently no posts to display.',
-];
+    if (
+        $mybb->get_input('action') != 'deactivate' ||
+        $mybb->get_input('plugin') != 'ougc_profileactivity' ||
+        !$mybb->get_input('uninstall', \MyBB::INPUT_INT)
+    ) {
+        return false;
+    }
+
+    if ($mybb->request_method != 'post') {
+        $page->output_confirm_action(
+            'index.php?module=config-plugins&amp;action=deactivate&amp;uninstall=1&amp;plugin=ougc_profileactivity'
+        );
+    }
+
+    if ($mybb->get_input('no')) {
+        \admin_redirect('index.php?module=config-plugins');
+    }
+
+    return true;
+}
